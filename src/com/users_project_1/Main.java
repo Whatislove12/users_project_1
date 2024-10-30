@@ -9,46 +9,46 @@ public class Main {
 
         while (true) {
             System.out.println("");
-            System.out.println("Текущий список пользователей:");
+            System.out.println("Current list of users:");
             userManager.listUsers();
             System.out.println("");
-            System.out.println("Введите команду (добавить, удалить, поиск, изменить или q для выхода): ");
+            System.out.println("Enter a command (add, delete, search, modify, or q to exit): ");
             String command = scanner.nextLine().trim();
 
             if (command.equals("q")) {
-                System.out.println("Завершение программы.");
+                System.out.println("Completion of the programme");
                 break;
             }
 
             int id;
 
             switch (command) {
-                case "добавить":
-                    System.out.println("Введите имя");
+                case "add":
+                    System.out.println("Enter a name");
                     String name = scanner.nextLine();
-                    System.out.println("Введите фамилию");
+                    System.out.println("Enter a surname");
                     String surName = scanner.nextLine();
-                    System.out.println("Введите возраст");
+                    System.out.println("Enter an age");
                     int age = scanner.nextInt();
                     scanner.nextLine(); // очищаем остаток после ввода числа
 
                     userManager.addUser(new User(name, surName, age));
-                    System.out.println("Пользователь добавлен");
+                    System.out.println("User added");
                     break;
-                case "удалить":
-                    System.out.println("Введите ID пользователя, которого хотите удалить");
+                case "delete":
+                    System.out.println("Enter the ID of the user you want to delete");
                     id = scanner.nextInt();
                     scanner.nextLine();
                     userManager.removeUser(id);
                     break;
-                case "поиск":
-                    System.out.println("Введите id пользователя, которого хотите найти и отобразить");
+                case "search":
+                    System.out.println("Enter the id of the user you want to search and display");
                     id = scanner.nextInt();
                     scanner.nextLine();
                     userManager.aUser(id);
                     break;
-                case "изменить":
-                    System.out.println("Введите id пользователя, которого хотите изменить");
+                case "modify":
+                    System.out.println("Enter the id of the user you want to change");
                     id = scanner.nextInt();
                     scanner.nextLine();
                     userManager.changeUser(id);

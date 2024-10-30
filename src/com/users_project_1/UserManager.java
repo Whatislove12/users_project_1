@@ -59,32 +59,32 @@ public class UserManager {
         User user = findUser(id);
         Scanner scanner = new Scanner(System.in);
         if (user != null) {
-            System.out.println("Что вы хотите изменить? (1 - имя, 2 - фамилию, 3 - возраст): ");
+            System.out.println("What do you want to change? (1 - first name, 2 - last name, 3 - age): ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice) {
                 case 1:
-                    System.out.print("Введите новое имя: ");
+                    System.out.print("Enter a new name: ");
                     String newName = scanner.nextLine();
                     user.setName(newName);
                     break;
                 case 2:
-                    System.out.print("Введите новую фамилию: ");
+                    System.out.print("Enter a new surname: ");
                     String newSurname = scanner.nextLine();
                     user.setSurname(newSurname);
                     break;
                 case 3:
-                    System.out.print("Введите новый возраст: ");
+                    System.out.print("Enter a new age: ");
                     int newAge = scanner.nextInt();
                     user.setAge(newAge);
                     break;
                 default:
-                    System.out.println("Неверный выбор.");
+                    System.out.println("Wrong choice.");
             }
         }
         else {
-            System.out.println("Пользователь с таким ID не найден.");
+            System.out.println("User with this ID was not found.");
         }
     }
 }
